@@ -20,7 +20,7 @@ steps:
     entrypoint: bash
     args: ["-c", "make deploy"]
 
-logsBucket: "gscloudbuild_logs_poc"
+logsBucket: "gs://cloudbuild_logs_poc"
 serviceAccount: "projects/${PROJECT_ID}/serviceAccounts/ca-build-cicd@${PROJECT_ID}.iam.gserviceaccount.com"
 options:
   logging: GCS_ONLY
