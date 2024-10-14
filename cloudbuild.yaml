@@ -5,7 +5,7 @@ steps:
       [
         "build",
         "-t",
-        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest",
+        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image",
         ".",
       ]
   # Push the container image to Container Registry
