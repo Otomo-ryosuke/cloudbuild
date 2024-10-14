@@ -10,7 +10,7 @@ REGION=asia-northeast1
 
 # Target to decrypt the API key
 decrypt:
-    $(eval API_KEY=$(shell gcloud kms decrypt \
+	$(eval API_KEY=$(shell gcloud kms decrypt \
 		--location $(LOCATION) \
 		--keyring $(KEYRING_NAME) \
 		--key $(KEY_NAME) \
@@ -18,7 +18,7 @@ decrypt:
 		--plaintext-file - | base64 -d))
 # Target to deploy to Cloud Run
 deploy: decrypt
-    gcloud run deploy $(SERVICE_NAME) \
+	gcloud run deploy $(SERVICE_NAME) \
 		--image $(IMAGE_NAME) \
 		--platform managed \
 		--region $(REGION) \
