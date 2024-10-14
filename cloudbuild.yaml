@@ -5,7 +5,7 @@ steps:
       [
         "build",
         "-t",
-        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image",
+        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image",
         ".",
       ]
   # Push the container image to Container Registry
@@ -13,7 +13,7 @@ steps:
     args:
       [
         "push",
-        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image",
+        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image",
       ]
   # Deploy container image to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"

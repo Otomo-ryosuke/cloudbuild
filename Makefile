@@ -4,8 +4,8 @@ KEYRING_NAME=my-keyring
 KEY_NAME=openai-api-key
 ENCRYPTED_KEY_FILE=.secret/openai_api_key.txt.enc
 PROJECT_ID=udf-practice
-IMAGE_NAME=asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image
-SERVICE_NAME=my-image
+IMAGE_NAME=asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image
+SERVICE_NAME=website-summarizer
 REGION=asia-northeast1
 
 # Target to decrypt the API key
