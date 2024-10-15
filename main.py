@@ -1,3 +1,4 @@
+import yaml
 import streamlit as st
 # from streamlit_chat import message
 from langchain_openai import ChatOpenAI
@@ -11,6 +12,20 @@ from langchain_community.callbacks.manager import get_openai_callback
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+
+from service.get_api_key import decrypt_symmetric
+
+
+with open('config.yaml', 'r') as file:
+    config = yaml.safe_load(file)
+
+OPENAI_API_KEY = decrypt_symmetric(
+    config['project_id'],
+    config['location_id'],
+    config['key_ring_id'],
+    config['crypto_key_id'],
+    config['ciphertext_file']
+)
 
 
 def init_page():
@@ -38,7 +53,7 @@ def select_model():
     else:
         model_name = "gpt-4o-mini"
 
-    return ChatOpenAI(temperature=0, model_name=model_name)
+    return ChatOpenAI(temperature=0, model_name=model_name, openai_api_key=OPENAI_API_KEY)
 
 
 def get_url_input():

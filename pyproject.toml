@@ -19,6 +19,8 @@ streamlit = "1.35.0"
 pyyaml = "^6.0.2"
 beautifulsoup4 = "^4.12.3"
 logging = "^0.4.9.6"
+google-cloud-kms = "^3.0.0"
+pybase64 = "^1.4.0"
 
 [build-system]
 requires = ["poetry-core"]
