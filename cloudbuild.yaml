@@ -17,10 +17,29 @@ steps:
       ]
   # Deploy container image to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: bash
-    args: ["-c", "make deploy"]
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "website-summarizer",
+        "--image",
+        "asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+        "--ingress",
+        "all",
+        "--region",
+        "asia-northeast1",
+        "--project",
+        "${PROJECT_ID}",
+        "--quiet"
+      ]
 
 logsBucket: "gs://cloudbuild_logs_poc"
 serviceAccount: "projects/${PROJECT_ID}/serviceAccounts/ca-build-cicd@${PROJECT_ID}.iam.gserviceaccount.com"
+
+timeout: 1200s
 options:
   logging: GCS_ONLY
