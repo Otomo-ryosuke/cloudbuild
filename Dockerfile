@@ -11,4 +11,4 @@ RUN poetry config virtualenvs.create false \
 # expose port
 EXPOSE 8080
 
-CMD ["streamlit", "run", "main.py", "--server.port", "$PORT", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "main.py", "--server.port", "8080", "--server.address", "0.0.0.0"]
