@@ -9,6 +9,6 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-root
 
 # expose port
-EXPOSE 8501
+EXPOSE 8080
 
-CMD ["streamlit", "run", "main.py"]
+CMD ["streamlit", "run", "main.py", "--server.port", "$PORT", "--server.address", "0.0.0.0"]

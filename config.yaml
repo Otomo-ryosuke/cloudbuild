@@ -1,0 +1,5 @@
+project_id: 'udf-practice'
+location_id: 'us-central1'
+key_ring_id: 'my-keyring'
+crypto_key_id: 'openai-api-key'
+ciphertext_file: '.secret/openai_api_key.txt.enc'
