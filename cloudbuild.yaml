@@ -34,11 +34,13 @@ steps:
         "asia-northeast1",
         "--project",
         "${PROJECT_ID}",
-        "--quiet"
+        "--quiet",
+        "--service-account",
+        "sa-build-cicd@${PROJECT_ID}.iam.gserviceaccount.com"
       ]
 
 logsBucket: "gs://cloudbuild_logs_poc"
-serviceAccount: "projects/${PROJECT_ID}/serviceAccounts/ca-build-cicd@${PROJECT_ID}.iam.gserviceaccount.com"
+serviceAccount: "sa-build-cicd@${PROJECT_ID}.iam.gserviceaccount.com"
 
 timeout: 1200s
 options:
